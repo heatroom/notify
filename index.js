@@ -1,4 +1,5 @@
-var template = require('./index');
+var template = require('./template');
+var list = require('./list');
 var domify = require('domify');
 var after = require('after-transition').once;
 var store = require('store');
@@ -29,7 +30,7 @@ function next() {
  * Create a list and add it to the DOM. All notifications
  * will be added to this list.
  */
-var list = domify(require(./list));
+var list = domify(list);
 document.body.appendChild(list);
 
 /**
@@ -40,7 +41,9 @@ document.body.appendChild(list);
  */
 
 function Notification(message, type) {
-if(!this instanceof Notification) return new Notification(message, type);
+if(!(this instanceof Notification)) {
+  return new Notification(message, type);
+}
 this.el = domify(template);
 this.content(message);
 this.type(type);
@@ -93,7 +96,7 @@ Notification.prototype.duration = function (dur) {
  * @return {Notification}
  */
 
-Notification.prototype.show = function (){
+Notification.prototype.show = function (duration){
   if(active && active !== this) {
     queue.push(this);
     return this;
