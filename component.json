@@ -1,0 +1,22 @@
+{
+  "name": "notify",
+  "repo": "heatroom/notify",
+  "description": "notification",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/domify": "*",
+    "yields/after-transition": "*",
+    "yields/store": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "notify.css"
+  ]
+}
