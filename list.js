@@ -1,1 +1,0 @@
-module.exports = '<div class="Notifications"></div>\n';

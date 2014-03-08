@@ -1,1 +1,0 @@
-module.exports = '<div class="Notification hide"></div>';
